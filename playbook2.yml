@@ -31,7 +31,8 @@
   - name: Disable SSH access for "{{ user_app }}"
     ansible.builtin.lineinfile:
       path: /etc/ssh/sshd_config
-      regexp: "^AllowUsers."{{ user_app }}""
+      regexp: '^AllowUsers.*'
+      line: 'AllowUsers {{ user_app }}'
       state: absent
       backup: yes
       validate: "/usr/sbin/sshd -t -f %s"
