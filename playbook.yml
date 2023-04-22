@@ -7,4 +7,3 @@
   - name: Ping my servers
     ping:
   
-  - name 
