@@ -4,5 +4,9 @@
   become: yes
 
   tasks:
-  - name: Ping my servers
-    ping:
+  - name: Install Decker
+    ansible.builtin.dnf:
+      name:
+        - docker
+        - git
+      state: latest
