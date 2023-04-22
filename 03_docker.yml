@@ -1,0 +1,13 @@
+---
+- name: Setting all
+  hosts: test_hosts
+  become: yes
+
+  tasks:
+    - name: Clone git repository
+      git:
+        repo: https://github.com/RaZZario/netdata.git
+        dest: /home/netdata/
+        version: main
+      become: yes
+      become_user: netdata

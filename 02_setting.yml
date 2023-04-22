@@ -1,5 +1,5 @@
 ---
-- name: Test Connections to my servers
+- name: Setting all
   hosts: test_hosts
   become: yes
 
