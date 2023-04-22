@@ -16,5 +16,5 @@
     ansible.builtin.user:
       name: netdata
       shell: /bin/bash
-      groups: sudo,docker
+      groups: docker
       append: yes
