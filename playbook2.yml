@@ -4,9 +4,17 @@
   become: yes
 
   tasks:
-  - name: Install Decker
+  - name: Install apps
     ansible.builtin.dnf:
       name:
         - docker
         - git
+        - sudo
       state: latest
+
+  - name: Create user and add him to group docker
+    ansible.builtin.user:
+      name: netdata
+      shell: /bin/bash
+      groups: sudo,docker
+      append: yes
