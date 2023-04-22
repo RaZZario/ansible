@@ -4,7 +4,7 @@
   become: yes
 
   vars:
-    user_app: "netdata"
+    user_app: netdata
 
   tasks:
   - name: Install apps
@@ -23,15 +23,15 @@
 
   - name: Create user and add him to group docker
     ansible.builtin.user:
-      name: {{ user_app }}
+      name: "{{ user_app }}"
       shell: /bin/bash
       groups: docker
       append: yes
   
-  - name: Disable SSH access for {{ user_app }}
+  - name: Disable SSH access for "{{ user_app }}"
     ansible.builtin.lineinfile:
       path: /etc/ssh/sshd_config
-      regexp: "^AllowUsers.{{ user_app }}"
+      regexp: "^AllowUsers."{{ user_app }}""
       state: absent
       backup: yes
       validate: "/usr/sbin/sshd -t -f %s"
