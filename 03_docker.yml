@@ -8,6 +8,6 @@
       git:
         repo: https://github.com/RaZZario/netdata.git
         dest: /home/netdata/git
-        version: main
+        version: master
       become: yes
       become_user: netdata
