@@ -11,6 +11,12 @@
         - git
         - sudo
       state: latest
+  
+  - name: Started docker and enabled
+    ansible.builtin.service:
+      name: docker
+      state: started
+      enabled: yes
 
   - name: Create user and add him to group docker
     ansible.builtin.user:
