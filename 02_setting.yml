@@ -1,6 +1,6 @@
 ---
 - name: Setting all
-  hosts: test_hosts
+  hosts: prod_hosts
   become: yes
 
   vars:
