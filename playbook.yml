@@ -1,6 +1,6 @@
 ---
 - name: Test Connections to my servers
-  hosts: all
+  hosts: test
   become: yes
 
   tasks:
